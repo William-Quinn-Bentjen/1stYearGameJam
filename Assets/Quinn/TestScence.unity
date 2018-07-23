@@ -197,6 +197,58 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1369523678
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4264555472241896, guid: 80d34496ae1c88c4688ccb40b95ee53d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 4264555472241896, guid: 80d34496ae1c88c4688ccb40b95ee53d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 4264555472241896, guid: 80d34496ae1c88c4688ccb40b95ee53d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -16.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4264555472241896, guid: 80d34496ae1c88c4688ccb40b95ee53d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4264555472241896, guid: 80d34496ae1c88c4688ccb40b95ee53d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4264555472241896, guid: 80d34496ae1c88c4688ccb40b95ee53d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4264555472241896, guid: 80d34496ae1c88c4688ccb40b95ee53d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4264555472241896, guid: 80d34496ae1c88c4688ccb40b95ee53d, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 96178109391081734, guid: 80d34496ae1c88c4688ccb40b95ee53d,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key0.a
+      value: 0.9019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 96178109391081734, guid: 80d34496ae1c88c4688ccb40b95ee53d,
+        type: 2}
+      propertyPath: m_Parameters.colorGradient.key1.a
+      value: 0.64705884
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 80d34496ae1c88c4688ccb40b95ee53d, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1509728749
 GameObject:
   m_ObjectHideFlags: 0
