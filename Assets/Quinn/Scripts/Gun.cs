@@ -8,10 +8,7 @@ public abstract class Gun : MonoBehaviour
     public int MagSize = 5;
     //ready to fire at 0
     public float TBS = 1;
-    public float TBSTimer;
     public float ReloadTime = 3;
-    public float ReloadTimer;
-    public bool Reloading = false;
     public bool ReloadAfterLastShot = true;
     //public WeaponType TypeOfWeapon;
     //public ReticleController.ReticleType TypeOfReticle;
@@ -19,6 +16,12 @@ public abstract class Gun : MonoBehaviour
     public Animation FireAnimation;
     public delegate void AmmoChange(/*WeaponType type,*/ int InMag, int MagSize);
     public AmmoChange OnAmmoChange;
+
+    [Header("READ ONLY")]
+    public float TBSTimer;
+    public float ReloadTimer;
+    public bool Reloading = false;
+
     public virtual void Fire()
     {
         TBSTimer = TBS;
