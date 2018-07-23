@@ -4,17 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class player_movment : MonoBehaviour,IDamageable { 
     public float speed;
-    public controller controller;
+    public controller1 controller1;
     Vector3 desierv;
     float horizontal;
     float vertical;
     public Rigidbody rm;
     public Transform cam;
-    public GameObject melee;
+    //public GameObject melee;
     public float narmolhealth;
     public float currenthealth;
     public float maxhealth;
-    public gun owngun;
+    //public gun owngun;
     public int points;
     public int lives = 3;
     public int currentaimo;
@@ -37,7 +37,7 @@ public class player_movment : MonoBehaviour,IDamageable {
     {
         rm = GetComponent<Rigidbody>();
         currenthealth = narmolhealth;
-        owngun.owner = this;
+        //owngun.owner = this;
         //play.health2();
         //play.ammo2();
         //play.score2();
@@ -66,14 +66,11 @@ public class player_movment : MonoBehaviour,IDamageable {
         //    }
         //    return;
         //}
-        if(controller.gunoff == true)
-        {
-            controller.player4.enabled = true;
-        }
-        controller.player3.enabled = true;
-        horizontal = controller.horizontal;
+      
+        //controller1.player3.enabled = true;
+        horizontal = controller1.horizontal;
         Vector3 myright = cam.right * horizontal;
-        vertical = controller.vertical;
+        vertical = controller1.vertical;
         Vector3 myup = cam.forward * vertical;
         myright.y = 0;
         myup.y = 0;
