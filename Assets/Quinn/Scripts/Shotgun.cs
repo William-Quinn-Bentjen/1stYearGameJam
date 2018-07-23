@@ -69,10 +69,6 @@ public class Shotgun : Gun
             OnAmmoChange.Invoke(/*TypeOfWeapon,*/ InMag, MagSize);
         }
     }
-    public override void TriggerDown()
-    {
-        base.TriggerDown();
-    }
     public override void StartReload()
     {
         base.StartReload();

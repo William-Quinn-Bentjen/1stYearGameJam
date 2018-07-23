@@ -15,6 +15,8 @@ public class controller1 : MonoBehaviour {
     public float leftrun;
     public bool firegun;
     public float rightrun;
+    public bool reload1;
+    public bool reloadgun;
     IEnumerator startviprat()
     {
         GamePad.SetVibration(playerIndex, leftrun, rightrun);
@@ -37,7 +39,7 @@ public class controller1 : MonoBehaviour {
             vertical = state.ThumbSticks.Left.Y;
             horizontalcamra = state.ThumbSticks.Right.X;
             verticalcamra = state.ThumbSticks.Right.Y;
-            if (prevState.Triggers.Right <= 0.2f && state.Triggers.Right >= .5f /*&& reload == false*/)
+            if (prevState.Triggers.Right <= 0.2f && state.Triggers.Right >= .5f && reload1 == false)
             {
                 StartCoroutine(startviprat());
                 firegun = true;
@@ -46,6 +48,15 @@ public class controller1 : MonoBehaviour {
             {
                 firegun = false;
             }
+            if (prevState.Buttons.X == ButtonState.Released && state.Buttons.X == ButtonState.Pressed)
+            {
+                reloadgun = true;
+            }
+            else
+            {
+                reloadgun = false;
+            }
+            
             }
     }
 }
