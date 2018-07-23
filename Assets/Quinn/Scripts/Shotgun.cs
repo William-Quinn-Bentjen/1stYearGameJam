@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Shotgun : Gun
 {
+    public controller playerController;
     public AnimationCurve DropOffCurve;
     public float Damage = 30;
     public float force = 9999;
@@ -11,6 +12,13 @@ public class Shotgun : Gun
     public float EffectiveRange = 30;
     public float GroupingDistance = 10;
     public float GroupingRadius = 1;
+    public override void TriggerDown()
+    {
+        if (playerController.firegun)
+        {
+            base.TriggerDown();
+        }
+    }
     public override void Fire()
     {
         base.Fire();
