@@ -12,10 +12,10 @@ public class camracontrol : MonoBehaviour {
 
     private void Update()
     {
-        if(gamemaniger.GM.pose== true)
-        {
-            return;
-        }
+        //if(gamemaniger.GM.pose== true)
+        //{
+        //    return;
+        //}
         //Cursor.lockState = CursorLockMode.Locked;
         //RotateCamera();
         RotatecCameracomntroler();
