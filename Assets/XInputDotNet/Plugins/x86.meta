@@ -1,8 +1,15 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 81ee109614ee77f40aea029a397052bf
 folderAsset: yes
 timeCreated: 1491639509
 licenseType: Free
+=======
+guid: 363d5f844c70bd84e80176b1a1292819
+folderAsset: yes
+timeCreated: 1532367150
+licenseType: Pro
+>>>>>>> quinn
 DefaultImporter:
   userData: 
   assetBundleName: 
