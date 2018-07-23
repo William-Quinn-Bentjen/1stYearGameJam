@@ -4,23 +4,19 @@ using UnityEngine;
 
 public class Shotgun : Gun
 {
-    public controller playerController;
+    [Header("Shotgun settings")]
+    public controller1 playerController;
     public AnimationCurve DropOffCurve;
     public float Damage = 30;
     public float force = 9999;
+    [Header("Grouping settings")]
     public float PelletsPerShell = 5;
     public float EffectiveRange = 30;
     public float GroupingDistance = 10;
     public float GroupingRadius = 1;
-    public override void TriggerDown()
-    {
-        if (playerController.firegun)
-        {
-            base.TriggerDown();
-        }
-    }
     public override void Fire()
     {
+        Debug.Log("Fireing");
         base.Fire();
         List<Ray> rays = new List<Ray>();
         for (int i = 0; i < PelletsPerShell; i++)
@@ -76,6 +72,11 @@ public class Shotgun : Gun
     void FixedUpdate()
     {
         TBSTimer -= Time.deltaTime;
+        Debug.Log("firegun = " + playerController.firegun);
+        if (playerController.firegun)
+        {
+            base.TriggerDown();
+        }
         //Reload logic
         if (Reloading)
         {
