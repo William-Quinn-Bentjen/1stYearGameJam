@@ -46,27 +46,38 @@ public class Shotgun : Gun
     {
         Reloading = false;
         ReloadTimer = ReloadTime;
+        ReloadInicator.instance.StopReload();
     }
     public override void Reload()
     {
         //base.Reload();
-
-        if (InMag < MagSize)
+        if (playerController.reload1 == true)
         {
-            InMag++;
-            if (InMag == MagSize)
-            {
-                Reloading = false;
-            }
-            else
-            {
-                StartReload();
-            }
-            OnAmmoChange.Invoke(/*TypeOfWeapon,*/ InMag, MagSize);
+            Reloading = false;
+            InMag = MagSize;
+            //just in case
+            ReloadInicator.instance.StopReload();
+            //reset player controller reload bools
+            playerController.reloadgun = false;
+            playerController.reload1 = false;
+            //old
+            //InMag++;
+            //if (InMag == MagSize)
+            //{
+            //    Reloading = false;
+            //}
+            //else
+            //{
+            //    StartReload();
+            //}
+            //OnAmmoChange.Invoke(/*TypeOfWeapon,*/ InMag, MagSize);
         }
     }
     public override void StartReload()
     {
+        Reloading = true;
+        playerController.reload1 = true;
+        ReloadInicator.instance.StartReload(ReloadTime);
         base.StartReload();
     }
     void FixedUpdate()
@@ -77,10 +88,15 @@ public class Shotgun : Gun
         {
             base.TriggerDown();
         }
+        if (playerController.reloadgun == true && playerController.reload1 == false)
+        {
+            StartReload();
+        }
         //Reload logic
         if (Reloading)
         {
             ReloadTimer -= Time.deltaTime;
+            Debug.Log("RELOAD VALUE = " + ReloadTime);
             if (ReloadTimer <= 0)
             {
                 Reload();
