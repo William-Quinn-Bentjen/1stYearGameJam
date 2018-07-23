@@ -23,7 +23,7 @@ public class Shotgun : Gun
         }
         foreach (Ray ray in rays)
         {
-            GameObject spawned = BulletPool.BulletPoolInstance.getObject(transform.position);
+            GameObject spawned = new GameObject(); /* ulletPool.BulletPoolInstance.getObject(transform.position);*/
             spawned.GetComponent<Rigidbody>().AddForce(ray.direction * force);
             spawned.GetComponent<TrailRenderer>().Clear();
             RaycastHit[] hits = Physics.RaycastAll(ray);
@@ -33,7 +33,7 @@ public class Shotgun : Gun
                 if (hit.collider.tag == "Enemy")
                 {
                     float damagepercentage = Mathf.Clamp(DropOffCurve.Evaluate(hit.distance / EffectiveRange), 0, 1);
-                    hit.collider.GetComponent<IDamageable>().TakeDamage(Damage * (damagepercentage));
+                    //hit.collider.GetComponent<IDamageable>().TakeDamage(Damage * (damagepercentage));
                 }
             }
         }
@@ -58,7 +58,7 @@ public class Shotgun : Gun
             {
                 StartReload();
             }
-            OnAmmoChange.Invoke(TypeOfWeapon, InMag, MagSize);
+            OnAmmoChange.Invoke(/*TypeOfWeapon,*/ InMag, MagSize);
         }
     }
     public override void TriggerDown()
@@ -84,7 +84,7 @@ public class Shotgun : Gun
     }
     void Start()
     {
-        OnAmmoChange.Invoke(TypeOfWeapon, InMag, MagSize);
+        OnAmmoChange.Invoke(/*TypeOfWeapon,*/ InMag, MagSize);
     }
     public void OnDrawGizmos()
     {
