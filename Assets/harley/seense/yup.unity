@@ -431,9 +431,9 @@ MonoBehaviour:
   verticalcamra: 0
   contrler1: 1
   contrler2: 0
-  leftrun: 0
+  leftrun: 10000
   firegun: 0
-  rightrun: 0
+  rightrun: 10000
 --- !u!114 &1717549095
 MonoBehaviour:
   m_ObjectHideFlags: 0
