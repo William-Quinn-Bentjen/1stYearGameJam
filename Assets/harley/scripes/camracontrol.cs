@@ -7,7 +7,7 @@ public class camracontrol : MonoBehaviour {
     public Rigidbody playerBody;
     public float mouseSensitivity_x;
     public float mouseSensitivity_y;
-    public controller controller;
+    public controller1 controller1;
     float xAxisClamp = 0.0f;
 
     private void Update()
@@ -58,8 +58,8 @@ public class camracontrol : MonoBehaviour {
     void RotatecCameracomntroler()
     {
 
-        float mouseX = controller.horizontalcamra;
-        float mouseY = controller.verticalcamra;
+        float mouseX = controller1.horizontalcamra;
+        float mouseY = controller1.verticalcamra;
 
         float rotAmountX = mouseX * mouseSensitivity_x;
         float rotAmountY = mouseY * mouseSensitivity_y;
