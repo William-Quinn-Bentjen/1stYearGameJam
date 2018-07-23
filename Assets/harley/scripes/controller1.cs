@@ -17,6 +17,7 @@ public class controller1 : MonoBehaviour {
     public float rightrun;
     public bool reload1;
     public bool reloadgun;
+    public AudioSource play;
     IEnumerator startviprat()
     {
         GamePad.SetVibration(playerIndex, leftrun, rightrun);
@@ -43,6 +44,7 @@ public class controller1 : MonoBehaviour {
             {
                 StartCoroutine(startviprat());
                 firegun = true;
+                play.Play();
             }
             else
             {
