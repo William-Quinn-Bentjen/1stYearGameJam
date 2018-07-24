@@ -9,6 +9,7 @@ public class BreakableObject : MonoBehaviour
     public float explosionRadius = 1;
     public float upwardsModifier;
     public List<Rigidbody> partsList;
+    public Collider bulletCollider;
     bool broken = false;
     private void Start()
     {
@@ -21,6 +22,7 @@ public class BreakableObject : MonoBehaviour
             broken = true;
             foreach (Rigidbody rb in partsList)
             {
+                rb.isKinematic = false;
                 rb.AddExplosionForce(explosiveForce, gameObject.transform.position + positionOffset, explosionRadius, upwardsModifier);
             }
         }
@@ -32,9 +34,11 @@ public class BreakableObject : MonoBehaviour
             Rigidbody rb = child.GetComponent<Rigidbody>();
             if (rb != null)
             {
+                rb.isKinematic = true;
                 partsList.Add(rb);
             }
         }
+        bulletCollider = GetComponent<Collider>();
     }
     private void OnDrawGizmos()
     {

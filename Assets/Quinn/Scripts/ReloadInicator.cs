@@ -43,7 +43,7 @@ public class ReloadInicator : MonoBehaviour {
         float barSize;
         while (reloadTimer < value)
         {
-            Debug.Log("UI TIMER =" + reloadTimer);
+            //Debug.Log("UI TIMER =" + reloadTimer);
             barSize = reloadTimer / value;
             fullBar.sizeDelta = new Vector2(barSize * barLength, fullBar.sizeDelta.y);
             reloadTimer += Time.deltaTime;

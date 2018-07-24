@@ -54,7 +54,6 @@ public abstract class Gun : MonoBehaviour
     {
         if (!Reloading)
         {
-            ReloadInicator.instance.StartReload(ReloadTime);
             ReloadTimer = ReloadTime;
             Reloading = true;
         }
