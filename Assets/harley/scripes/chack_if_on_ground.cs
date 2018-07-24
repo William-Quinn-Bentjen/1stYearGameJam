@@ -8,6 +8,7 @@ public class chack_if_on_ground : MonoBehaviour {
     public LayerMask layer;
     public float down;
     public player_movment player;
+    public float offset = 0.5f;
 	// Use this for initialization
 	void Start () {
 		
@@ -30,10 +31,9 @@ public class chack_if_on_ground : MonoBehaviour {
 
 
         }
-        if (Physics.Raycast(transform.position, -transform.up, hitdistance, layer))
+        if (Physics.Raycast(transform.position + (Vector3.down * offset), -transform.up, hitdistance, layer))
         {
             isGrounded = true;
-            Debug.DrawLine(transform.position, -transform.up);
         }
         else
         {
