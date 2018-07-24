@@ -75,6 +75,14 @@ public class Shotgun : Gun
     void FixedUpdate()
     {
         TBSTimer -= Time.deltaTime;
+        if (TBSTimer > 0)
+        {
+            playerController.wait = true;
+        }
+        else
+        {
+            playerController.wait = false;
+        }
         if (playerController.firegun)
         {
             base.TriggerDown();
@@ -95,7 +103,8 @@ public class Shotgun : Gun
     }
     void Start()
     {
-        Fire();
+        //testing 
+        //Fire();
     }
     public void OnDrawGizmos()
     {
