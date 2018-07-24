@@ -28,7 +28,6 @@ public class PointKeeper : MonoBehaviour {
         if (instance == null)
         {
             instance = this;
-            onChange += TestDel;
         }
         else
         {
@@ -38,9 +37,5 @@ public class PointKeeper : MonoBehaviour {
     public void Update()
     {
         Debug.Log("POINTS =" + Points);
-    }
-    public void TestDel(float value)
-    {
-        Debug.Log("TEST" + value);
     }
 }
