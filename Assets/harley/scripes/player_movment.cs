@@ -44,7 +44,10 @@ public class player_movment : MonoBehaviour,IDamageable {
         lives = 3;
         //owngun.play = play;
     }
-	
+	public void takeDamage(float damage, int pointGain, player_movment player)
+    {
+        //needed this here for it to compile
+    }
 	// Update is called once per frame
 	void Update () {
         //if(gamemaniger.GM.pose == true)
@@ -66,7 +69,7 @@ public class player_movment : MonoBehaviour,IDamageable {
         //    }
         //    return;
         //}
-      
+
         //controller1.player3.enabled = true;
         horizontal = controller1.horizontal;
         Vector3 myright = cam.right * horizontal;
@@ -76,13 +79,13 @@ public class player_movment : MonoBehaviour,IDamageable {
         myup.y = 0;
         desierv = (myup + myright).normalized * speed * Time.deltaTime;
         rm.velocity = desierv;
-      
+
         //if (controller.hit == true)
         //{
         //    GameObject melee2 = Instantiate(melee)as GameObject;
         //    melee2.transform.position = transform.forward;
         //    melee2.transform.position.y.Equals(90);
-        
+
         //curlook = new Vector3(rm.velocity.x, 0, rm.velocity.z);
 
         //if (curlook == Vector3.zero)
@@ -102,7 +105,7 @@ public class player_movment : MonoBehaviour,IDamageable {
         //{
         //    dir = rm.velocity.normalized;
         //}
-        if(barrels == 4)
+        if (barrels == 4)
         {
             havenolife.SetActive(true);
         }

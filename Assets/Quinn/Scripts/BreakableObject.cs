@@ -22,6 +22,7 @@ public class BreakableObject : MonoBehaviour
         {
             //give point value
             PointKeeper.instance.Points += pointValue;
+            //destroy
             broken = true;
             foreach (Rigidbody rb in partsList)
             {

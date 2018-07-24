@@ -32,12 +32,18 @@ public class Shotgun : Gun
             RaycastHit[] hits = Physics.RaycastAll(ray);
             foreach (RaycastHit hit in hits)
             {
-                Debug.DrawLine(transform.position, hit.point);
-                if (hit.collider.tag == "Enemy")
+                BreakableObject breakableObject = hit.collider.GetComponent<BreakableObject>();
+                float damagepercentage = Mathf.Clamp(DropOffCurve.Evaluate(hit.distance / EffectiveRange), 0, 1);
+                if (breakableObject != null && damagepercentage > 0.1f)
                 {
-                    float damagepercentage = Mathf.Clamp(DropOffCurve.Evaluate(hit.distance / EffectiveRange), 0, 1);
-                    //hit.collider.GetComponent<IDamageable>().TakeDamage(Damage * (damagepercentage));
+                    breakableObject.BreakObject();
                 }
+                Debug.DrawLine(transform.position, hit.point);
+                //if (hit.collider.tag == "Enemy")
+                //{
+                //    float damagepercentage = Mathf.Clamp(DropOffCurve.Evaluate(hit.distance / EffectiveRange), 0, 1);
+                //    //hit.collider.GetComponent<IDamageable>().TakeDamage(Damage * (damagepercentage));
+                //}
             }
         }
         RecoilMovement.instance.Move(transform.forward);

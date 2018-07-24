@@ -18,6 +18,7 @@ public class controller1 : MonoBehaviour {
     public bool reload1;
     public bool reloadgun;
     public bool wait;
+    public chack_if_on_ground ground;
     public AudioSource play;
     IEnumerator startviprat()
     {
@@ -37,8 +38,11 @@ public class controller1 : MonoBehaviour {
         state = GamePad.GetState(playerIndex);
         if (contrler1 == true)
         {
-            horizontal = state.ThumbSticks.Left.X;
-            vertical = state.ThumbSticks.Left.Y;
+            if (ground.isGrounded == true)
+            {
+                horizontal = state.ThumbSticks.Left.X;
+                vertical = state.ThumbSticks.Left.Y;
+            }
             horizontalcamra = state.ThumbSticks.Right.X;
             verticalcamra = state.ThumbSticks.Right.Y;
             if (prevState.Triggers.Right <= 0.2f && state.Triggers.Right >= .5f && reload1 == false&&wait == false)
