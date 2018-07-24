@@ -43,6 +43,8 @@ GameObject:
   - component: {fileID: 114405742472501354}
   - component: {fileID: 54698435317072930}
   - component: {fileID: 114478736271406592}
+  - component: {fileID: 136358985890734142}
+  - component: {fileID: 82142267495011224}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -165,6 +167,86 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1023659638603838}
   m_Enabled: 1
+--- !u!82 &82142267495011224
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1141540038304328}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9f2553a6ae96e5c48bd8c2e29760ddd7, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!92 &92985547178001890
 Behaviour:
   m_ObjectHideFlags: 1
@@ -184,8 +266,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerBody: {fileID: 54698435317072930}
-  mouseSensitivity_x: 1
-  mouseSensitivity_y: 1
+  mouseSensitivity_x: 2
+  mouseSensitivity_y: 2
   controller1: {fileID: 114791604359511990}
 --- !u!114 &114405742472501354
 MonoBehaviour:
@@ -230,8 +312,8 @@ MonoBehaviour:
   hitdistance: 0
   layer:
     serializedVersion: 2
-    m_Bits: 0
-  down: 0
+    m_Bits: 256
+  down: 1000
   player: {fileID: 114405742472501354}
 --- !u!114 &114791604359511990
 MonoBehaviour:
@@ -256,6 +338,8 @@ MonoBehaviour:
   rightrun: 100000
   reload1: 0
   reloadgun: 0
+  wait: 0
+  play: {fileID: 82142267495011224}
 --- !u!114 &114856842738221454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -321,3 +405,16 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1023659638603838}
   m_Enabled: 1
+--- !u!136 &136358985890734142
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1141540038304328}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
