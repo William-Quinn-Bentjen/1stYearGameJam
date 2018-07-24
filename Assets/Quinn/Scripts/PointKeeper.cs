@@ -6,12 +6,8 @@ public class PointKeeper : MonoBehaviour {
 
     public static PointKeeper instance;
     public delegate void OnChange(float value);
-    OnChange onChange;
+    public OnChange onChange;
     private float _points = 0;
-    private void Start()
-    {
-        onChange += TestDel;
-    }
     public float Points
     {
         get
@@ -21,7 +17,10 @@ public class PointKeeper : MonoBehaviour {
         set
         {
             _points = value;
-            onChange(value);
+            if (onChange != null)
+            {
+                onChange(value);
+            }
         }
     }
     private void Awake()
@@ -29,6 +28,7 @@ public class PointKeeper : MonoBehaviour {
         if (instance == null)
         {
             instance = this;
+            onChange += TestDel;
         }
         else
         {

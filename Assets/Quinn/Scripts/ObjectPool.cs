@@ -8,7 +8,7 @@ public class ObjectPool : MonoBehaviour {
 
     public int pooledAmount;
 	// SPAWNS PREFAB ADDS TO THE STACK AND ASSIGNS THE PARENT TO OURSELVES
-	void Start () {
+	void Awake () {
         pool = new Stack<GameObject>();
         for(int i = 0; i < pooledAmount; i++)
         {

@@ -15,7 +15,6 @@ public class Shotgun : Gun
     public float GroupingRadius = 1;
     public override void Fire()
     {
-        Debug.Log("Fireing");
         base.Fire();
         List<Ray> rays = new List<Ray>();
         for (int i = 0; i < PelletsPerShell; i++)
@@ -41,6 +40,7 @@ public class Shotgun : Gun
                 }
             }
         }
+        RecoilMovement.instance.Move(transform.forward);
     }
     public void CancelReload()
     {
@@ -89,7 +89,7 @@ public class Shotgun : Gun
     }
     void Start()
     {
-
+        Fire();
     }
     public void OnDrawGizmos()
     {
