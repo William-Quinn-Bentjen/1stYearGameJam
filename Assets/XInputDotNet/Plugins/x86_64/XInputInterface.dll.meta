@@ -17,24 +17,22 @@ PluginImporter:
         settings:
           Exclude Android: 1
           Exclude Editor: 0
-          Exclude Linux: 0
+          Exclude Linux: 1
           Exclude Linux64: 0
           Exclude LinuxUniversal: 0
-          Exclude OSXIntel: 0
+          Exclude OSXIntel: 1
           Exclude OSXIntel64: 0
-          Exclude OSXUniversal: 0
+          Exclude OSXUniversal: 1
           Exclude WebGL: 1
-          Exclude Win: 0
+          Exclude Win: 1
           Exclude Win64: 0
           Exclude iOS: 1
     data:
       first:
-        '': Editor
+        '': data
       second:
         enabled: 0
-        settings:
-          CPU: x86_64
-          OS: Windows
+        settings: {}
     data:
       first:
         Android: Android
@@ -44,19 +42,13 @@ PluginImporter:
           CPU: ARMv7
     data:
       first:
-        Any: 
-      second:
-        enabled: 0
-        settings: {}
-    data:
-      first:
         Editor: Editor
       second:
         enabled: 1
         settings:
           CPU: x86_64
           DefaultValueInitialized: true
-          OS: Windows
+          OS: AnyOS
     data:
       first:
         Facebook: Win
@@ -75,7 +67,7 @@ PluginImporter:
       first:
         Standalone: Linux
       second:
-        enabled: 1
+        enabled: 0
         settings:
           CPU: None
     data:
@@ -91,12 +83,12 @@ PluginImporter:
       second:
         enabled: 1
         settings:
-          CPU: AnyCPU
+          CPU: x86_64
     data:
       first:
         Standalone: OSXIntel
       second:
-        enabled: 1
+        enabled: 0
         settings:
           CPU: None
     data:
@@ -110,14 +102,14 @@ PluginImporter:
       first:
         Standalone: OSXUniversal
       second:
-        enabled: 1
+        enabled: 0
         settings:
-          CPU: AnyCPU
+          CPU: x86_64
     data:
       first:
         Standalone: Win
       second:
-        enabled: 1
+        enabled: 0
         settings:
           CPU: None
     data:

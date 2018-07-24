@@ -29,12 +29,10 @@ PluginImporter:
           Exclude iOS: 1
     data:
       first:
-        '': Editor
+        '': data
       second:
         enabled: 0
-        settings:
-          CPU: AnyCPU
-          OS: Windows
+        settings: {}
     data:
       first:
         Android: Android
@@ -44,19 +42,13 @@ PluginImporter:
           CPU: ARMv7
     data:
       first:
-        Any: 
-      second:
-        enabled: 0
-        settings: {}
-    data:
-      first:
         Editor: Editor
       second:
         enabled: 1
         settings:
-          CPU: x86_64
+          CPU: AnyCPU
           DefaultValueInitialized: true
-          OS: Windows
+          OS: AnyOS
     data:
       first:
         Facebook: Win
@@ -68,7 +60,7 @@ PluginImporter:
       first:
         Facebook: Win64
       second:
-        enabled: 1
+        enabled: 0
         settings:
           CPU: AnyCPU
     data:
@@ -77,14 +69,14 @@ PluginImporter:
       second:
         enabled: 1
         settings:
-          CPU: None
+          CPU: x86
     data:
       first:
         Standalone: Linux64
       second:
         enabled: 1
         settings:
-          CPU: None
+          CPU: x86_64
     data:
       first:
         Standalone: LinuxUniversal
@@ -98,14 +90,14 @@ PluginImporter:
       second:
         enabled: 1
         settings:
-          CPU: None
+          CPU: AnyCPU
     data:
       first:
         Standalone: OSXIntel64
       second:
         enabled: 1
         settings:
-          CPU: None
+          CPU: AnyCPU
     data:
       first:
         Standalone: OSXUniversal
@@ -127,12 +119,6 @@ PluginImporter:
         enabled: 1
         settings:
           CPU: AnyCPU
-    data:
-      first:
-        WebGL: WebGL
-      second:
-        enabled: 0
-        settings: {}
     data:
       first:
         Windows Store Apps: WindowsStoreApps
