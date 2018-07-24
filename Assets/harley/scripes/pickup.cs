@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class pickup : MonoBehaviour {
     public spawnroom sp;
-    public GunUI play;
-    public PlayerFaceUI pick;
+    //public GunUI play;
+    //public PlayerFaceUI pick;
 }
