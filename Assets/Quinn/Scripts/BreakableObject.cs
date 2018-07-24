@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BreakableObject : MonoBehaviour
 {
+    public float pointValue = 0;
     public float explosiveForce = 1;
     public Vector3 positionOffset;
     public float explosionRadius = 1;
@@ -19,6 +20,8 @@ public class BreakableObject : MonoBehaviour
     {
         if (!broken)
         {
+            //give point value
+            PointKeeper.instance.Points += pointValue;
             broken = true;
             foreach (Rigidbody rb in partsList)
             {
