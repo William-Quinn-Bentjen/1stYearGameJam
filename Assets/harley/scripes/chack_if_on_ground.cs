@@ -28,10 +28,12 @@ public class chack_if_on_ground : MonoBehaviour {
             hitdistance = 0.15f;
             player.rm.AddForce(Vector3.down * down);
 
+
         }
         if (Physics.Raycast(transform.position, -transform.up, hitdistance, layer))
         {
             isGrounded = true;
+            Debug.DrawLine(transform.position, -transform.up);
         }
         else
         {

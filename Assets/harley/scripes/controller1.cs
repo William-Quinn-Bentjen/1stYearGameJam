@@ -17,6 +17,7 @@ public class controller1 : MonoBehaviour {
     public float rightrun;
     public bool reload1;
     public bool reloadgun;
+    public bool wait;
     public AudioSource play;
     IEnumerator startviprat()
     {
@@ -40,7 +41,7 @@ public class controller1 : MonoBehaviour {
             vertical = state.ThumbSticks.Left.Y;
             horizontalcamra = state.ThumbSticks.Right.X;
             verticalcamra = state.ThumbSticks.Right.Y;
-            if (prevState.Triggers.Right <= 0.2f && state.Triggers.Right >= .5f && reload1 == false)
+            if (prevState.Triggers.Right <= 0.2f && state.Triggers.Right >= .5f && reload1 == false&&wait == false)
             {
                 StartCoroutine(startviprat());
                 firegun = true;
