@@ -13,6 +13,10 @@ public class spawnroom : MonoBehaviour {
     public int initalWallCount = 10;
     public float timeBetweenSpawns = 0.5f;
     public float spawnDistance = 300;
+    [Range(0, 1)]
+    public float cliffSpawnRate = .1f;
+    [Range(0, 1)]
+    public float flipRate = .3f;
     private List<GameObject> sideList = new List<GameObject>();
     private int wallVerticleCount = 1;
     private float angle;
@@ -42,16 +46,28 @@ public class spawnroom : MonoBehaviour {
             //float x = Random.Range(-range, range);
             //float z = Random.Range(-range, range);
             //spawn a wall
-            int random = Random.Range(0, rooms.Length);
+            int random = 1;
+            if (Random.Range(0f, 1f) > cliffSpawnRate)
+            {
+                random = 0;
+            }
+            
             GameObject spawnroom = Instantiate(rooms[random], sideList[i].transform);
             
             //face center
             //spawnroom.transform.LookAt(center.transform.position);
             //change position
             spawnroom.transform.position = new Vector3(spawnroom.transform.position.x, spawnroom.transform.position.y - (wallHeight * wallVerticleCount), spawnroom.transform.position.z);
-            if (random == 0)
+            if (random == 1)
             {
                 spawnroom.transform.localPosition = new Vector3(0, spawnroom.transform.localPosition.y, Random.Range(0, cliffMaxStickOut));
+            }
+            else
+            {
+                if (Random.Range(0f, 1f) > flipRate)
+                {
+                    spawnroom.transform.localRotation = Quaternion.Euler(spawnroom.transform.rotation.x, spawnroom.transform.rotation.y, spawnroom.transform.rotation.z + 180);
+                }
             }
             //don't tilt
             //spawnroom.transform.rotation = Quaternion.Euler(0, spawnroom.transform.rotation.eulerAngles.y + (angle * i), 0);
@@ -69,10 +85,13 @@ public class spawnroom : MonoBehaviour {
         float distance = Player.transform.position.y - level;
         while (true)
         {
-            spawn();
             level = center.transform.position.y - (wallHeight * wallVerticleCount);
             distance = Player.transform.position.y - level;
-            if (distance >= spawnDistance)
+            if (distance < spawnDistance)
+            {
+                spawn();
+            }
+            else
             {
                 yield return new WaitForSeconds(timeBetweenSpawns);
             }

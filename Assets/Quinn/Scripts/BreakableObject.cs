@@ -14,7 +14,8 @@ public class BreakableObject : MonoBehaviour
     bool broken = false;
     private void Start()
     {
-        BreakObject();
+        //testing
+        //BreakObject();
     }
     public void BreakObject()
     {
@@ -28,6 +29,7 @@ public class BreakableObject : MonoBehaviour
             {
                 rb.isKinematic = false;
                 rb.AddExplosionForce(explosiveForce, gameObject.transform.position + positionOffset, explosionRadius, upwardsModifier);
+                Destroy(rb.gameObject, 2);
             }
         }
     }

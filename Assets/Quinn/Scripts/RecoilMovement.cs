@@ -20,7 +20,8 @@ public class RecoilMovement : MonoBehaviour {
     }
     public void Move(Vector3 shotDirection)
     {
-        rb.AddForce(shotDirection.normalized * -1 * amount, forceMode);
+        rb.AddForce(-shotDirection * amount, forceMode);
+        //rb.AddExplosionForce(amount, rb.gameObject.transform.position + rb.gameObject.transform.forward.normalized, 3, 0);
     }
     public void Reset()
     {
