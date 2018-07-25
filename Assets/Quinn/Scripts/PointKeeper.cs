@@ -28,19 +28,10 @@ public class PointKeeper : MonoBehaviour {
         if (instance == null)
         {
             instance = this;
-            onChange += TestDel;
         }
         else
         {
             Debug.Log("one too many pointkeeper get rid of one", gameObject);
         }
-    }
-    public void Update()
-    {
-        Debug.Log("POINTS =" + Points);
-    }
-    public void TestDel(float value)
-    {
-        Debug.Log("TEST" + value);
     }
 }

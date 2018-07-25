@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Quinn/Scenes/TestScence.unity
+    guid: 55e7c26ca7619774fa8b1a906e1c5e75
+  - enabled: 1
+    path: Assets/Quinn/Scenes/DeathScene.unity
+    guid: 423294281e06c6b458524a293eef848d
