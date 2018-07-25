@@ -1145,7 +1145,7 @@ Prefab:
     - target: {fileID: 114856842738221454, guid: 5fc21e490c662954d8c6a01bc61b3013,
         type: 2}
       propertyPath: MagSize
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114856842738221454, guid: 5fc21e490c662954d8c6a01bc61b3013,
         type: 2}
@@ -1186,6 +1186,11 @@ Prefab:
     - target: {fileID: 4463009248982280, guid: 5fc21e490c662954d8c6a01bc61b3013, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114856842738221454, guid: 5fc21e490c662954d8c6a01bc61b3013,
+        type: 2}
+      propertyPath: TBS
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5fc21e490c662954d8c6a01bc61b3013, type: 2}
