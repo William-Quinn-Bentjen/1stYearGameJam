@@ -1155,7 +1155,7 @@ Prefab:
     - target: {fileID: 114856842738221454, guid: 5fc21e490c662954d8c6a01bc61b3013,
         type: 2}
       propertyPath: ReloadTime
-      value: 1.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 82142267495011224, guid: 5fc21e490c662954d8c6a01bc61b3013,
         type: 2}
