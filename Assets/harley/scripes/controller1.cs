@@ -52,9 +52,10 @@ public class controller1 : MonoBehaviour {
             verticalcamra = state.ThumbSticks.Right.Y;
             if (prevState.Triggers.Right <= 0.2f && state.Triggers.Right >= .5f && reload1 == false&&wait == false)
             {
+                
                 StartCoroutine(startviprat());
-                firegun = true;
                 play.Play();
+                firegun = true;
             }
             else
             {
