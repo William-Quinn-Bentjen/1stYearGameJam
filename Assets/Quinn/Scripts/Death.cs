@@ -4,10 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Death : MonoBehaviour {
+    public bool godMode = false;
     public int deathScene = 1;
 	void OnCollisionEnter()
     {
-        //restart
-        SceneManager.LoadScene(deathScene);
+        if (!godMode)
+        {
+            //restart
+            SceneManager.LoadScene(deathScene);
+        }
     }
 }

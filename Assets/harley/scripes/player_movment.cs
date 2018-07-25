@@ -78,7 +78,7 @@ public class player_movment : MonoBehaviour,IDamageable {
         myright.y = 0;
         myup.y = 0;
         desierv = (myup + myright).normalized * speed * Time.deltaTime;
-        rm.velocity = desierv;
+        rm.AddForce(desierv);
 
         //if (controller.hit == true)
         //{
