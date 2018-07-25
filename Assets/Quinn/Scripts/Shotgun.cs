@@ -13,6 +13,7 @@ public class Shotgun : Gun
     public float EffectiveRange = 30;
     public float GroupingDistance = 10;
     public float GroupingRadius = 1;
+    public AudioSource reloadSound;
     public override void Fire()
     {
         base.Fire();
@@ -71,6 +72,12 @@ public class Shotgun : Gun
         playerController.reload1 = true;
         ReloadInicator.instance.StartReload(ReloadTime);
         base.StartReload();
+        if (Reloading == true)
+        {
+            ProgAnimation.instance.reloadTime = ReloadTime;
+            ProgAnimation.instance.reloading = true;
+            reloadSound.Play();
+        }
     }
     void FixedUpdate()
     {

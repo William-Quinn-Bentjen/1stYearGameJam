@@ -2216,7 +2216,7 @@ MonoBehaviour:
   - {fileID: 54452616824051514}
   - {fileID: 54434213603666472}
   - {fileID: 54482483948494544}
-  bulletCollider: {fileID: 0}
+  bulletCollider: {fileID: 135345022557616032}
 --- !u!135 &135345022557616032
 SphereCollider:
   m_ObjectHideFlags: 1

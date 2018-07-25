@@ -30,7 +30,12 @@ public class controller1 : MonoBehaviour {
     void Start () {
 		
 	}
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
 
+        GamePad.SetVibration(playerIndex, 0, 0);
+    }
     // Update is called once per frame
     void Update()
     {
