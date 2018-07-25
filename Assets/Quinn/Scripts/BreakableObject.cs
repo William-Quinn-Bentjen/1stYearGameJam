@@ -11,6 +11,7 @@ public class BreakableObject : MonoBehaviour
     public float upwardsModifier;
     public List<Rigidbody> partsList;
     public Collider bulletCollider;
+    public float partLifetime = 2;
     bool broken = false;
     private void Start()
     {
@@ -22,14 +23,22 @@ public class BreakableObject : MonoBehaviour
         if (!broken)
         {
             //give point value
-            PointKeeper.instance.Points += pointValue;
+            if (PointKeeper.instance != null)
+            {
+                PointKeeper.instance.Points += pointValue;
+            }
+            else
+            {
+                Debug.Log("no point keeper in scene");
+            }
             //destroy
             broken = true;
+            bulletCollider.enabled = false;
             foreach (Rigidbody rb in partsList)
             {
                 rb.isKinematic = false;
                 rb.AddExplosionForce(explosiveForce, gameObject.transform.position + positionOffset, explosionRadius, upwardsModifier);
-                Destroy(rb.gameObject, 2);
+                Destroy(rb.gameObject, partLifetime);
             }
         }
     }

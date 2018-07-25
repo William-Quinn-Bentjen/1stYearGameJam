@@ -1298,7 +1298,7 @@ MonoBehaviour:
   - {fileID: 54843174319815650}
   - {fileID: 54597416227255630}
   - {fileID: 54569833097625284}
-  bulletCollider: {fileID: 0}
+  bulletCollider: {fileID: 135564666876607964}
 --- !u!135 &135564666876607964
 SphereCollider:
   m_ObjectHideFlags: 1
