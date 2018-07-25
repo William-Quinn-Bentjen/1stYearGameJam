@@ -29,6 +29,7 @@ public class BreakableObject : MonoBehaviour
             {
                 rb.isKinematic = false;
                 rb.AddExplosionForce(explosiveForce, gameObject.transform.position + positionOffset, explosionRadius, upwardsModifier);
+                Destroy(rb.gameObject, 2);
             }
         }
     }

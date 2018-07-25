@@ -58,7 +58,6 @@ public class chack_if_on_ground : MonoBehaviour {
         {
             airTime += Time.deltaTime;
             float curveEval = velocityCurve.Evaluate(Mathf.Clamp01(airTime / timeToReachTerminalVelocity));
-            Debug.Log("air time = " + airTime + " curve evaluation = " + curveEval);
             hitdistance = 0.15f;
             player.rm.AddForce(Vector3.down * curveEval * down);
 

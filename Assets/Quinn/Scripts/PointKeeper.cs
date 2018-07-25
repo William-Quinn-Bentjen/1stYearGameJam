@@ -34,8 +34,4 @@ public class PointKeeper : MonoBehaviour {
             Debug.Log("one too many pointkeeper get rid of one", gameObject);
         }
     }
-    public void Update()
-    {
-        Debug.Log("POINTS =" + Points);
-    }
 }
